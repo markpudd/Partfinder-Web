@@ -1,0 +1,29 @@
+<div>
+  <h1>Parts</h1>
+
+  <div ng-controller="PartsController">
+    <div class="row">
+      <div class="col-md-6">
+        <label for="category">Category</label>
+        <select ng-options="category for category in categories" ng-model="categorySelected" ng-change="categoryChanged()" class="form-control"></select>
+      </div>
+      <div class="col-md-6">  
+        <a href="#/new_part.html/new">New</a>
+      </div>
+    </div>
+    <ul class="parts">
+      <li class="parts" ng-repeat="part in parts">
+        <div class="part">
+          <div class="part_top">
+            <img class="part_left" src="images/7/{{part.image}}" alt="Image" height="42" width="42"></img>
+            <h1 class="part_h1" title="{{part.description}}">{{part.description}}</h1>
+            <h2 class="part_h2">{{part._id}}</h2>
+          </div>
+          <h3 class="part_info_line">Quantity {{part.quantity}}</h3>
+          <a href="#/parts.html/{{part._id}}">Open</a>
+        </div> 
+      </li>
+    </ul>
+  </div>
+</div>
+      

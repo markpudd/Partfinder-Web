@@ -1,0 +1,16 @@
+<form ng-submit="submit()" ng-controller="LoginController" ng-init="init()">
+  <div class="row">
+    <div class="col-md-10">
+      <h2>Login</h2>
+    </div>
+  </div>
+  <div class="row">
+    <p>Name
+      <input type="text" ng-model="user.username" required></input>
+    </p>
+    <p>Password
+      <input type="text" ng-model="user.password" required></input>
+    </p>
+  </div>
+  <input type="submit"  id="submit" value="Login"></input>
+</form>

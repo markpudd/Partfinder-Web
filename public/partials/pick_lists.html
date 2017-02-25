@@ -1,0 +1,22 @@
+<h1>Pick Lists</h1>
+<a href="#/new_pick_list.html/new">New</a>
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Number of Unique Parts</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <tr ng-repeat="pick_list in pick_lists">
+    <td>{{pick_list.name}}</td>
+    <td>{{pick_list.description}}</td>
+    <td>{{pick_list.parts.length}}</td>
+    <td>
+      <a href="#/pick_lists_show.html/{{pick_list._id}}">Show</a>
+    </td>
+    <td>
+      <a href="#/pick_lists_play.html/{{pick_list._id}}">Play</a>
+    </td>
+  </tr>
+</table>

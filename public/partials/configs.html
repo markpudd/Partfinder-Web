@@ -1,0 +1,10 @@
+<h1>Configs</h1>
+<div ng-controller="ConfigsController">
+  <ul>
+    <li ng-repeat="config in configs">
+        <a href="#/configs.html/{{config._id}}">{{config.name}}</a>
+    </li>
+  </ul>
+  <a href="#/configs.html/new">New</a>
+
+</div>

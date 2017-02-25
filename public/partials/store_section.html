@@ -1,0 +1,35 @@
+<h1>Store Section</h1>
+<div ng-controller="StoreSectionController">
+  <div>
+    <div class="right_section">
+      <label for="store">Store</label>
+      <select ng-options="option.name for option in store_list track by option._id" ng-model="storeSelected" ng-change="storeChanged()" class.form-control></select>
+    </div>
+  </div>
+  <div>
+    <div class="right_section">
+      <div class="store-row" ng-repeat="cols in store_config.rows">
+        <div ng-repeat="cc in cols  track by $index" ng-class="cc.css">
+          <div class="store" id="{{cc.sid}}" drag-destination ng_click="selectPlace(cc.sid)" ng-class="selected_place == cc.sid  ? 'selected': ''">
+            <h3 class="store_line" ng-repeat="part_name in store.stored[cc.sid] | limitTo:3">{{part_name}}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="left_section">
+      <ul class="parts">
+        <li class="parts" ng-repeat="part in section_parts track by $index">
+          <div class="part">
+            <div class="part_top">
+              <img class="part_left" src="images/7/{{part.image}}" alt="Image" height="42" width="42"></img>
+              <h1 class="part_h1" title="{{part.description}}">{{part.description}}</h1>
+              <h2 class="part_h2">{{part._id}}</h2>
+            </div>
+            <h3 class="part_info_line">Quantity {{part.quantity}}</h3>
+            <a ng-click="remove(part._id)">Remove</a>
+           </div> 
+         </li>
+      </ul>
+    </div>   
+  </div>
+</div>

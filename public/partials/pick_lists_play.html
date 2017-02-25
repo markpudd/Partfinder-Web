@@ -1,0 +1,17 @@
+<form ng-submit="submit()", ng-controller="PlayPickListController">
+  <h2> Step {{step+1}}/{{no_step}}</h2>
+  <img src="images/7/{{current_part.image}}"></img>
+  <ul>
+    <li>
+      <p>{{current_part.category}} - {{current_part.description}}</p>
+    </li>
+    <li>
+      <p>Quantity {{pick_list.parts[step].quantity}}</p>
+    </li>
+    <li>
+      <p>Colour {{pick_list.parts[step].colour}}</p>
+    <li>
+   </ul>
+   <a href="#/pick_lists_play.html/{{pick_list._id}}", ng-click="prev()">Previous</a>
+   <a href="#/pick_lists_play.html/{{pick_list._id}}", ng-click="next()">Next</a> 
+</form>

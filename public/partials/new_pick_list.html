@@ -1,0 +1,41 @@
+<form ng-submit="submit()"  ng-controller="PickListController"  ng-init="init()">
+  <h1>New Pick List</h1>
+  <p>
+    Name
+    <input type="text" ng-model="pick_list.name" required></input>
+  </p>
+  <p>
+    Description
+    <input type="text" ng-model="pick_list.description" required></input>
+  </p>
+  <table class="table">
+    <tr>
+      <th>Category</th>
+      <th>Name</th>
+      <th>Quantity</th>
+      <th>Colour</th>
+      <th></th>
+    </tr>
+    <tr ng-repeat="part in pick_list.parts">
+      <td>
+        <select class="form-control" ng-options="value for value in categories" ng-model="part.category" ng-change="catChange(part.category)"></select>
+      </td>
+      <td>
+        <select class="form-control" ng-options="value._id as value.description for value in parts_hash[part.category]" ng-model="part.part_id")></select>
+      </td>
+      <td>
+        <input type="text" ng-model="part.quantity" required></input>
+      </td>
+      <td>
+        <input type="text" ng-model="part.colour" required></input>
+      </td>
+      <td>
+        <button type="button" ng-click="remove($index)">
+         <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+       </button>
+      </td>
+    </tr>
+  </table>
+  <input type="submit" id="submit" value="Save"></input>
+  <button type="button" ng-click="add()">Add Row</button>
+</form>

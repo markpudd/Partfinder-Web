@@ -1,0 +1,25 @@
+{
+  "name": "Partfinder-Web",
+  "version": "0.0.0",
+  "description": "Partfinder web assets",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "jasmine-core": "~2.4.1",
+    "karma": "~1.1.1",
+    "karma-jasmine": "~1.0.2",
+    "karma-chrome-launcher": "~1.0.1"
+  },
+  "devDependencies": {
+    "karma": "~1.1.1",
+    "karma-jasmine": "~1.0.2",
+    "karma-chrome-launcher": "~1.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "BSD-2-Clause"
+}

@@ -1,0 +1,13 @@
+<h1>Stores</h1>
+<div ng-controller="StoreLoadController">
+  <div class="right_section">
+    <div class="store-row" ng-repeat="cols in store_config.rows">
+      <div ng-repeat="cc in cols track by $index",ng-class="cc">
+        <div class="store">
+          <h3 class="store_line">Row x</h3>
+          <h3 class="store_line">Row y</h3>
+         </div> 
+        </div>
+     </div>
+  </div>
+</div> 

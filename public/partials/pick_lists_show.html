@@ -1,0 +1,21 @@
+<div ng-init="init()">
+  <h1>Pick Lists for {{pick_list.name}}</h1>
+  <table class="table">
+    <tr>
+      <th>Part Id</th>
+      <th>Name</th>
+      <th>Quantity</th>
+      <th>Colour</th>
+      <th></th>
+    </tr>
+    <tr ng-repeat="part in pick_list.parts">
+      <td>{{part.part_id}}</td>
+      <td>{{part.name}}</td>
+      <td>{{part.quantity}}</td>
+      <td>{{part.colour}}</td>
+      <td></td>
+    </tr>
+  <a href="#/parts.html/{{part.part_id}}">Show</a>
+  <a (href="#/edit_pick_list.html/{{pick_list._id}}">Edit</a>
+</table>
+</div>
