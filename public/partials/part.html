@@ -7,5 +7,15 @@
       <h2>{{part.category}} - {{part.description}}</h2>
     </div>
   </div>
-  <a href="#/edit_part.html/{{part._id}}")>Edit</a> 
+  <h3>Store - {{part.store.name}} - {{part.place_id}}</h3>
+  <div class="right_section">
+    <div class="store-row" ng-repeat="cols in store_config.rows">
+      <div ng-repeat="cc in cols track by $index" ng-class="cc.css" >
+        <div class="store" id="{{cc.sid}}" ng-class="selected_place == cc.sid  ? 'selected': ''">
+          <h3 class="store_line" ng-repeat="part_name in store.stored[cc.sid]  | limitTo:3">{{part_name}}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a href="#/edit_part.html/{{part._id}}")>Edit</a>
 </div>

@@ -78,11 +78,13 @@ partControllers.controller('PartsController', ['$scope', '$http', '$routeParams'
 }]);
 
 
-partControllers.controller('PartController', ['$scope', '$location', '$http', '$routeParams','fileUpload', function($scope, $location, $http, $routeParams,fileUpload) {
+partControllers.controller('PartController', ['$scope', '$location', '$http', '$routeParams','fileUpload','Configs', function($scope, $location, $http, $routeParams,fileUpload,Configs) {
     $scope.config = [];
     $scope.editorEnabled = false;
     $scope.submit_type = 'POST';
     $scope.cfgSelected = {};
+    $scope.store_config = { };
+    $scope.selected_place ={};
     $scope.part = {
         description: "",
     };
@@ -95,6 +97,9 @@ partControllers.controller('PartController', ['$scope', '$location', '$http', '$
             $scope.submit_type = 'PUT';
             $http.get('/parts/' + $routeParams.pid).success(function(data) {
                 $scope.part = data;
+                console.log(data.type);
+                $scope.selected_place = data.place_id;
+                $scope.store_config = Configs.get({id:data.store.type})
                 $scope.loadConfig();
             });
         } else {

@@ -114,7 +114,7 @@ pickListControllers.controller('PlayPickListController', ['$scope', '$http', '$r
         $scope.current_part = {}
 
 
-        $http.get('/parts/' + $scope.pick_list.parts[$scope.step].part_id).success(function(pdata) {
+        $http.get('/parts/device/' + $scope.pick_list.parts[$scope.step].part_id).success(function(pdata) {
             $scope.current_part = pdata;
             $scope.loc = $scope.current_part.location;
         });
@@ -123,7 +123,7 @@ pickListControllers.controller('PlayPickListController', ['$scope', '$http', '$r
 
             if ($scope.step < ($scope.no_step - 1)) {
                 $scope.step = $scope.step + 1;
-                $http.get('/parts/' + $scope.pick_list.parts[$scope.step].part_id).success(function(pdata) {
+                $http.get('/parts/device/' + $scope.pick_list.parts[$scope.step].part_id).success(function(pdata) {
                     $scope.current_part = pdata;
                     $scope.loc = $scope.current_part.location;
                 });
@@ -133,7 +133,7 @@ pickListControllers.controller('PlayPickListController', ['$scope', '$http', '$r
         $scope.prev = function() {
             if ($scope.step > 0) {
                 $scope.step = $scope.step - 1;
-                $http.get('/parts/' + $scope.pick_list.parts[$scope.step].part_id).success(function(pdata) {
+                $http.get('/parts/device/' + $scope.pick_list.parts[$scope.step].part_id).success(function(pdata) {
                     $scope.current_part = pdata;
                     $scope.loc = $scope.current_part.location;
                 });

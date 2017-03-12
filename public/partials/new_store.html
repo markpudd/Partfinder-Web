@@ -1,0 +1,26 @@
+<form ng-submit="submit()" ng-controller="StoreController" ng-init="init()">
+  <div class="row">
+    <div class="col-md-10">
+      <h2>New Store</h2>
+    </div>
+  </div>
+  <div class="row">
+    <p>
+      Name
+      <input type="text" ng-model="store.name" required></input>
+    </p>
+  </div>
+  <div class="row">
+    <p>
+      Type
+      <select class ="form-control" ng-options="option.name for option in configs track by option._id" ng-model="configSelected"></select>
+    </p>
+  </div>
+  <div class="row">
+    <p>
+      Hardware ID
+      <input type="text" ng-model="store.stid" required></input>
+    </p>
+  </div>
+  <input type="submit" id="submit" value="Save"></input>
+</form>
